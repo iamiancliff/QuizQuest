@@ -1,0 +1,501 @@
+/* 
+   QuizMaster - Simplified CSS
+   A responsive quiz website with clean modern design
+*/
+
+/* ---------- Core Variables & Reset ---------- */
+:root {
+    /* Main color palette */
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4cc9f0;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+    --dark: #282a36;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --gray-light: #e9ecef;
+    
+    /* Typography scale */
+    --h1: 2.5rem;
+    --h2: 2rem;
+    --h3: 1.5rem;
+    --text: 1rem;
+    --small: 0.875rem;
+}
+
+/* Simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Base Styles ---------- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Typography basics */
+h1, h2, h3 { margin-bottom: 1rem; line-height: 1.2; }
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); }
+h3 { font-size: var(--h3); }
+p { margin-bottom: 1rem; }
+
+a {
+    color: var(--primary);
+    text-decoration-color: #3f37c9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+/* ---------- Header & Navigation ---------- */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 15px;
+}
+
+header h1 {
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--dark);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+/* ---------- Main Content ---------- */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* ---------- Button Styles ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--gray);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #3d8b40;
+}
+
+button:disabled {
+    background-color: var(--gray-light);
+    color: var(--gray);
+    cursor: not-allowed;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Feature Cards ---------- */
+.features {
+    text-align: center;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* ---------- Image Slider ---------- */
+.image-slider {
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 700px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Slider navigation buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--dark);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ---------- Quiz Styles ---------- */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Progress tracking */
+.progress-bar {
+    height: 10px;
+    background-color: var(--gray-light);
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Question display */
+.question {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.options-list {
+    list-style: none;
+}
+
+.option {
+    margin-bottom: 1rem;
+}
+
+.option label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option label:hover {
+    border-color: var(--primary);
+}
+
+.option input[type="radio"] {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.error-message {
+    color: var(--error);
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ---------- Results Page ---------- */
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Score display */
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+}
+
+.score-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#feedback {
+    margin-bottom: 2rem;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Answer review section */
+.answer-review {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: left;
+}
+
+.answer-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.answer-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.correct { color: var(--success); font-weight: 500; }
+.incorrect { color: var(--error); font-weight: 500; }
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.loading i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    /* Adjust typography */
+    :root {
+        --h1: 2rem;
+        --h2: 1.75rem;
+        --h3: 1.25rem;
+    }
+    
+    /* Adjust layout for smaller screens */
+    .hero { padding: 2rem 0; }
+    
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card { max-width: 100%; }
+    
+    .quiz-navigation, .result-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .quiz-navigation button, .result-actions a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mobile header adjustments */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0 0.75rem;
+    }
+}

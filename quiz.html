@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizQuest - Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>QuizQuest</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quiz.html" class="active">Take Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+         <section class="quiz-container">
+            <div class="container">
+                <h2>General Knowledge Quiz</h2>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <form id="quiz-form">
+                    <div class="question-container">
+                        <!-- Questions will be dynamically inserted here by JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button type="button" id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                        <button type="button" id="next-btn" class="btn btn-primary">Next</button>
+                        <button type="submit" id="submit-btn" class="btn btn-success" style="display: none;">Submit Quiz</button>
+                    </div>
+
+                    <div id="validation-message" class="error-message" style="display: none;">
+                        Please select an answer before proceeding.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 QuizQuest. Created as a learning project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

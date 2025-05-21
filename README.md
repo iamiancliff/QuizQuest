@@ -3,7 +3,7 @@
 QuizQuest is a responsive three-page interactive quiz website built with HTML5, CSS3, and JavaScript. The website allows users to test their knowledge by answering multiple-choice questions on general knowledge topics.
 
 ## Live Demo
-[View Live Demo](https://github.com/iamiancliff/QuizQuest.git)
+[View Live Demo](https://iamiancliff.github.io/QuizQuest/)
 
 ## Features
 

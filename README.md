@@ -21,12 +21,6 @@ QuizQuest is a responsive three-page interactive quiz website built with HTML5, 
   - Answer review with correct/incorrect indicators
   - Image slider on the home page
 
-## Screenshots
-
-![Home Page](screenshots/Project%20Screenshot.png)
-![Quiz Page](screenshots/Project%20Screenshot%203.png)
-![Results Page](screenshots/Project%20Screenshot%202.png)
-
 ## Setup Instructions
 
 1. **Clone the repository**
